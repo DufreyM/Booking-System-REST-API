@@ -63,7 +63,7 @@ public class AuthService {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         SignInResponseDto response = SignInResponseDto.builder()
                 .token(jwt)
-                .id(Long.valueOf(userDetails.getId()))
+                .id(userDetails.getId())
                 .username(userDetails.getUsername())
                 .email(userDetails.getEmail())
                 .build();

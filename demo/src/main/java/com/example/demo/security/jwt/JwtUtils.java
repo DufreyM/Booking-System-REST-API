@@ -50,8 +50,7 @@ public class JwtUtils {
         try {
             Jwts.parserBuilder().setSigningKey(key()).build().parse(authToken);
             return true;
-        } catch (JwtException e) {
-            logger.error("Invalid JWT token: {}", e.getMessage());
+        } catch (JwtException ignored) {
         }
         return false;
     }
